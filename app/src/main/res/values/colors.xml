@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="persian_plum">#FF6F1D1B</color>
+    <color name="aztec_gold">#FFBB9457</color>
+    <color name="bistre">#FF432818</color>
+    <color name="coconut">#FF99582A</color>
+    <color name="navajo_white">#FFFFE6A7</color>
+    <color name="light_green">#FF5BDF64</color>
+    <color name="dark_green">#FF2E9F36</color>
+    <color name="green">#FF00FF6A</color>
+    <color name="orange">#FFFFA937</color>
+</resources>
