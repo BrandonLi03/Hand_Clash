@@ -3,11 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".pop_up.pause_pop_up">
+    tools:context=".pop_up.pause_pop_up"
+    android:background="@drawable/background_pop_up">
 
     <LinearLayout
-        android:layout_width="300dp"
-        android:layout_height="400dp"
+        android:layout_width="250dp"
+        android:layout_height="350dp"
         android:gravity="center_horizontal"
         android:orientation="vertical"
         android:background="@drawable/background_pause"
@@ -19,32 +20,99 @@
             android:text="Game Paused"
             android:textStyle="bold"
             android:textColor="@color/white"
-            android:textSize="35sp">
+            android:textSize="30sp">
         </TextView>
 
         <Space
             android:layout_width="wrap_content"
-            android:layout_height="40dp"/>
+            android:layout_height="30dp"/>
 
-        <ImageButton
+        <LinearLayout
             android:id="@+id/home_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/button_home"/>
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:background="@drawable/background_home_button"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="5dp"
+            android:layout_marginTop="10dp"
+            android:elevation="10dp"
+            android:clickable="true">
 
-        <ImageButton
+            <View
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/icon_home_button"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Home"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="23sp"
+                android:textAlignment="center"/>
+
+        </LinearLayout>
+
+        <LinearLayout
             android:id="@+id/replay_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/button_replay"
-            android:layout_marginTop="20dp"/>
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:background="@drawable/background_replay_button"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="5dp"
+            android:layout_marginTop="15dp"
+            android:elevation="10dp"
+            android:clickable="true">
 
-        <ImageButton
+            <View
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:background="@drawable/icon_replay_button"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Replay"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="23sp"
+                android:textAlignment="center"/>
+
+        </LinearLayout>
+
+        <LinearLayout
             android:id="@+id/resume_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/button_resume"
-            android:layout_marginTop="20dp"/>
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:background="@drawable/background_resume_button"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="5dp"
+            android:layout_marginTop="15dp"
+            android:elevation="10dp"
+            android:clickable="true">
+
+            <View
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:background="@drawable/icon_resume_button"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Resume"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="23sp"
+                android:textAlignment="center"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 

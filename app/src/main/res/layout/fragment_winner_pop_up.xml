@@ -28,12 +28,33 @@
             android:textAlignment="center"
             android:layout_marginTop="20dp"/>
 
-        <ImageButton
+        <LinearLayout
             android:id="@+id/continue_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/button_continue"
-            android:layout_marginTop="20dp"/>
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:background="@drawable/background_continue_button"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="5dp"
+            android:layout_marginTop="10dp"
+            android:elevation="10dp"
+            android:clickable="true">
+
+            <View
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:background="@drawable/icon_continue_button"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="Continue"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="35sp"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 
