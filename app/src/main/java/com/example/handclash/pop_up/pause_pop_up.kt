@@ -16,6 +16,7 @@ import com.example.handclash.home_page
 class pause_pop_up : DialogFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        isCancelable = false
     }
 
     override fun onCreateView(

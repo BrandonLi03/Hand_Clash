@@ -8,255 +8,282 @@ android:layout_height="match_parent"
 tools:context=".game_page"
 android:background="@color/aztec_gold">
 
-<LinearLayout
-    android:id="@+id/battle_result"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:gravity="center"
-    android:layout_marginTop="45dp"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintTop_toTopOf="parent">
-
     <LinearLayout
-        android:layout_width="100dp"
+        android:id="@+id/battle_result"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_marginTop="35dp"
         android:gravity="center"
-        android:layout_marginRight="30dp">
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="You"
+                android:textColor="@color/navajo_white"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/player_choice"
+                android:layout_width="60dp"
+                android:layout_height="65dp"
+                android:background="@drawable/background_loser" />
+
+        </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="You"
+            android:text="VS"
             android:textColor="@color/navajo_white"
-            android:textStyle="bold"
-            android:textSize="25sp"/>
+            android:textSize="50sp"
+            android:textStyle="bold" />
 
-        <ImageView
-            android:id="@+id/player_choice"
-            android:layout_width="60dp"
-            android:layout_height="65dp"
-            android:background="@drawable/background_loser"/>
+        <LinearLayout
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Monster"
+                android:textColor="@color/navajo_white"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/monster_choice"
+                android:layout_width="60dp"
+                android:layout_height="65dp"
+                android:background="@drawable/background_loser" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
-    <TextView
+    <ImageView
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="565dp"
+        android:background="@drawable/bckgrnd"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <ImageView
+        android:id="@+id/monster_img"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="VS"
-        android:textColor="@color/navajo_white"
+        android:background="@drawable/icon_monster"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/pause_btn"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/background_pause"
+        android:elevation="10dp"
+        android:text="ii"
+        android:textColor="@color/white"
+        android:textSize="17dp"
         android:textStyle="bold"
-        android:textSize="50sp"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/monster_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:text="Monster"
+        android:textColor="@color/persian_plum"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/battle_result"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="25dp"/>
+
+    <TextView
+        android:id="@+id/monster_hp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/monster_health_bar"
+        android:text="1000"
+        android:textStyle="bold"
+        android:textColor="@color/persian_plum"
+        android:textSize="20sp"
+        android:layout_marginRight="14dp"/>
+
+
+    <ProgressBar
+        android:id="@+id/monster_health_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginHorizontal="14dp"
+        android:elevation="10dp"
+        android:max="1000"
+        android:progress="500"
+        android:progressDrawable="@drawable/customize_progress_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/monster_tv"/>
 
     <LinearLayout
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:id="@+id/paper_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:background="@drawable/background_game_button"
+        android:elevation="10dp"
         android:gravity="center"
-        android:layout_marginLeft="25dp">
+        android:onClick="onPaperClick"
+        android:orientation="horizontal"
+        android:paddingHorizontal="15dp"
+        app:layout_constraintEnd_toStartOf="@+id/scissor_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/monster_img">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/icon_paper" />
+
+        <Space
+            android:layout_width="5dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Monster"
-            android:textColor="@color/navajo_white"
-            android:textStyle="bold"
-            android:textSize="25sp"/>
-
-        <ImageView
-            android:id="@+id/monster_choice"
-            android:layout_width="60dp"
-            android:layout_height="65dp"
-            android:background="@drawable/background_loser"/>
-
+            android:text="Paper"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
     </LinearLayout>
 
-</LinearLayout>
+    <LinearLayout
+        android:id="@+id/scissor_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:background="@drawable/background_game_button"
+        android:elevation="10dp"
+        android:gravity="center"
+        android:onClick="onScissorClick"
+        android:orientation="horizontal"
+        android:paddingHorizontal="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/monster_img">
 
-<ImageView
-    android:id="@+id/background"
-    android:layout_width="match_parent"
-    android:layout_height="550dp"
-    android:background="@drawable/bckgrnd"
-    app:layout_constraintBottom_toBottomOf="parent"/>
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="27dp"
+            android:src="@drawable/icon_scissor" />
 
-<ImageView
-    android:id="@+id/monster_img"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintBottom_toBottomOf="parent"
-    android:background="@drawable/icon_monster"/>
+        <Space
+            android:layout_width="5dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
 
-<androidx.appcompat.widget.AppCompatButton
-    android:id="@+id/pause_btn"
-    android:layout_width="40dp"
-    android:layout_height="40dp"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    android:background="@drawable/background_pause"
-    android:text="ii"
-    android:textStyle="bold"
-    android:textSize="17dp"
-    android:textColor="@color/white"
-    android:layout_marginRight="15dp"
-    android:layout_marginTop="15dp"
-    android:elevation="10dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Scissor"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
 
-<TextView
-    android:id="@+id/monster_tv"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintBottom_toTopOf="@id/monster_health_bar"
-    android:text="Monster"
-    android:textStyle="bold"
-    android:textColor="@color/persian_plum"
-    android:textSize="25sp"
-    android:layout_marginLeft="14dp"/>
+    <LinearLayout
+        android:id="@+id/rock_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:background="@drawable/background_game_button"
+        android:elevation="10dp"
+        android:gravity="center"
+        android:onClick="onRockClick"
+        android:orientation="horizontal"
+        android:paddingHorizontal="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/scissor_btn"
+        app:layout_constraintTop_toBottomOf="@+id/monster_img">
 
-<ProgressBar
-    android:id="@+id/monster_health_bar"
-    android:layout_width="match_parent"
-    android:layout_height="20dp"
-    style="?android:attr/progressBarStyleHorizontal"
-    android:progressDrawable="@drawable/customize_progress_bar"
-    android:max="1000"
-    android:progress="500"
-    android:layout_marginHorizontal="14dp"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintTop_toTopOf="@+id/background"
-    android:elevation="10dp"/>
+        <ImageView
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:src="@drawable/icon_rock" />
 
-<LinearLayout
-    android:id="@+id/paper_btn"
-    android:layout_width="wrap_content"
-    android:layout_height="45dp"
-    android:orientation="horizontal"
-    android:gravity="center"
-    android:background="@drawable/background_game_button"
-    android:paddingHorizontal="15dp"
-    android:onClick="onPaperClick"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toStartOf="@+id/scissor_btn"
-    app:layout_constraintTop_toBottomOf="@+id/monster_img"
-    android:elevation="10dp">
+        <Space
+            android:layout_width="5dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
 
-    <ImageView
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:src="@drawable/icon_paper"/>
-
-    <Space
-        android:layout_width="5dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rock"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
 
     <TextView
+        android:id="@+id/you_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Paper"
-        android:textSize="20sp"
+        android:layout_marginStart="14dp"
+        android:text="You"
         android:textColor="@color/white"
-        android:textStyle="bold"/>
-</LinearLayout>
-
-<LinearLayout
-    android:id="@+id/scissor_btn"
-    android:layout_width="wrap_content"
-    android:layout_height="45dp"
-    android:orientation="horizontal"
-    android:gravity="center"
-    android:background="@drawable/background_game_button"
-    android:paddingHorizontal="15dp"
-    android:onClick="onScissorClick"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/monster_img"
-    android:elevation="10dp">
-
-    <ImageView
-        android:layout_width="25dp"
-        android:layout_height="27dp"
-        android:src="@drawable/icon_scissor"/>
-
-    <Space
-        android:layout_width="5dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"/>
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/player_health_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scissor_btn"/>
 
     <TextView
+        android:id="@+id/player_hp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Scissor"
-        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/player_health_bar"
+        android:text="1000"
+        android:textStyle="bold"
         android:textColor="@color/white"
-        android:textStyle="bold"/>
-</LinearLayout>
-
-<LinearLayout
-    android:id="@+id/rock_btn"
-    android:layout_width="wrap_content"
-    android:layout_height="45dp"
-    android:orientation="horizontal"
-    android:gravity="center"
-    android:background="@drawable/background_game_button"
-    android:paddingHorizontal="15dp"
-    android:onClick="onRockClick"
-    app:layout_constraintStart_toEndOf="@id/scissor_btn"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/monster_img"
-    android:elevation="10dp">
-
-    <ImageView
-        android:layout_width="23dp"
-        android:layout_height="23dp"
-        android:src="@drawable/icon_rock"/>
-
-    <Space
-        android:layout_width="5dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Rock"
         android:textSize="20sp"
-        android:textColor="@color/white"
-        android:textStyle="bold"/>
-</LinearLayout>
+        android:layout_marginRight="14dp"/>
 
-<TextView
-    android:id="@+id/you_tv"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/scissor_btn"
-    app:layout_constraintBottom_toTopOf="@id/player_health_bar"
-    android:text="You"
-    android:textStyle="bold"
-    android:textColor="@color/white"
-    android:textSize="25sp"
-    android:layout_marginLeft="14dp"/>
-
-<ProgressBar
-    android:id="@+id/player_health_bar"
-    android:layout_width="match_parent"
-    android:layout_height="20dp"
-    style="?android:attr/progressBarStyleHorizontal"
-    android:progressDrawable="@drawable/customize_progress_bar"
-    android:max="1000"
-    android:progress="500"
-    android:layout_marginHorizontal="14dp"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/scissor_btn"
-    app:layout_constraintBottom_toBottomOf="parent"/>
+    <ProgressBar
+        android:id="@+id/player_health_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginHorizontal="14dp"
+        android:max="1000"
+        android:progress="500"
+        android:progressDrawable="@drawable/customize_progress_bar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scissor_btn"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

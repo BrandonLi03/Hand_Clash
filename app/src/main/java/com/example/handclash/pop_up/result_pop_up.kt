@@ -11,6 +11,7 @@ import com.example.handclash.R
 class result_pop_up : DialogFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        isCancelable = false
 
     }
 

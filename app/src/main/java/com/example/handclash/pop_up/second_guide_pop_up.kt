@@ -12,6 +12,7 @@ import com.example.handclash.databinding.FragmentSecondGuidePopUpBinding
 class second_guide_pop_up : DialogFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        isCancelable = false
     }
 
     override fun onCreateView(

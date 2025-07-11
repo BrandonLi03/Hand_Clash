@@ -15,6 +15,7 @@ import com.example.handclash.game_page
 class loser_pop_up : DialogFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        isCancelable = false
     }
 
     override fun onCreateView(
@@ -30,8 +31,6 @@ class loser_pop_up : DialogFragment() {
         val continue_btn = view.findViewById<LinearLayout>(R.id.continue_btn)
         continue_btn.setOnClickListener{
             dismiss()
-            val intent = Intent(requireContext(), game_page::class.java)
-            startActivity(intent)
         }
     }
 }
